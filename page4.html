@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="home_files/bootstrap.css">
     <link rel="stylesheet" href="home_files/app.css">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
        
 	<title>Home | COVID-19 Info Center</title>
     <meta name="description" content="">
@@ -55,7 +56,7 @@
 
                     <li class="nav-item" id="menu4">
                         <a class="nav-link active" href="page4.html">
-                            About The Team						</a>
+                            Registration Form						</a>
                     </li>
 
                 </ul>
@@ -75,7 +76,7 @@
                 
                     <div class="row">
                         <br>
-                        <h2 id="content" class="open d-lg-block">About The Team</h2>
+                        <h2 id="content" class="open d-lg-block">Registration Enquiry</h2>
                         <br>
                         <br>
                         <br>
@@ -100,15 +101,16 @@
                             <div class="col-md-12">
                                 <div class="card border-0 rounded-0">
                                     <div class="card-body bg-quaternary">
-                                        <h2 class="card-title h3 mb-3 text-left">Lab1-Group3 Team Members</h2>
-                                        <p><strong>Zaid Bin Osman (101215148)<strong></p>
-                                        <p> Second year Bachelor of Computer Science student from Swinburne University of Technology Sarawak Campus. I am the team leader of this group. For this task, besides making sure my team members are up-to-date with any updates regarding the project, was to make the homepage/landing page of this website. In addition, I help with some "quality control" here and there as well. </p>
-										<p><strong>Aynsley Aaron Chong (101215711)<strong></p>
-										<p>Student of swinburne major in CyberSecurity. In this task, I was tasked to design the template for each of the web page in menu to achieve consistency of our website. I was also tasked to create the Pfizer-BioNTech page that contains information about Pfizer vaccine </p>
-										<p><strong>Joshua Law Lik Zhiung (100083674)<strong></p>	
-										<p>Second year of Bachelor of Computer Science in CyberSecurity student from Swinburne University of Technology Sarawak Campus. In this task, I was assigned to find information on Sinovac Vaccine and add the information to the page. I will be also helping to assist the team leader in ensuring the information in each page is accurate and correct.</p>
-                                        <p><strong>Ivan Ong Beng Tiong (101214417)</strong></p>	
-                                        <p> Second Year Student of Bachelor of Computer Science, CyberSecurity Major. I am the deputy team leader of this group. My task is to create the Sputnik V page and update some minor changes such as the inline CSS for the page.</p>
+                                        <h2 class="card-title h3 mb-3 text-left">Fill in the form</h2>
+											<form>
+												<input type="text" id="name" name="firstname" placeholder="First name" />
+												<input type="text" id="lname" name="lastname" placeholder="Last name"/>
+												<input type="email" id="email" name="contactemail" placeholder="E-mail" />		
+												<input type="tel" id="fphone" name="phone" placeholder="Phone number" />
+												<input type="allergic" id="allergic" name="addAllergic" placeholder="Please fill this section if you have any allergic" size="30"/>
+											</form>
+										<input type="submit" value="Submit">
+										<input type="reset" value="Reset">
                                     </div>
                                 </div>
                             </div>

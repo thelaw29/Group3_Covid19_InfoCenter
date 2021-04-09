@@ -1,0 +1,64 @@
+/*Enquiry page style*/
+
+/*--------------------Enquiry form style--------------------*/
+	
+
+	input[type=text], select {
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	}
+
+	input[type=email], select {
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	}
+
+	input[type=tel], select {
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	}
+	
+	input[type=allergic], select {
+	  width: 100%;
+	  padding: 24px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	}
+
+
+	input[type=submit], input[type=reset] {
+	  width: 20%;
+	  background-color: black;
+	  color: white;
+	  padding: 14px 0px;
+	  margin: 15px 30px;
+	  border: none;
+	  border-radius: 30px;
+	  cursor: pointer;
+	}
+
+	input[type=submit]:hover{
+	  background-color: #228B22;
+	}
+
+	input[type="reset"]:hover{
+		background-color: #ff3333;
+	}
