@@ -15,7 +15,14 @@
     <meta name="keywords" content="">	
 </head>
 
-<body> 
+<body>
+ 
+ <?php
+	$fname = $_POST['firstname'];
+	$lname = $_POST['lastname'];
+	$email = $_POST['contactemail'];
+	$allergic = $_POST ['addAllergic'];
+?>
     <div class="container-fluid site-title">
     <!-- <div class=""> -->
         <div class="container">
@@ -75,7 +82,7 @@
                 
                     <div class="row">
                         <br>
-                        <h2 id="content" class="open d-lg-block">Registration Enquiry</h2>
+                        <h2 id="content" class="open d-lg-block">Registration Confirmed</h2>
                         <br>
                         <br>
                         <br>
@@ -100,16 +107,29 @@
                             <div class="col-md-12">
                                 <div class="card border-0 rounded-0">
                                     <div class="card-body bg-quaternary">
-                                        <h2 class="card-title h3 mb-3 text-left">Fill in the form</h2>
-											<form id="confirmform" method="post" action="confirm.php">
-												<input type="text" name="firstname" placeholder="First name" />
-												<input type="text" name="lastname" placeholder="Last name"/>
-												<input type="text" name="contactemail" placeholder="E-mail" />		
-												<input type="text" name="phone" placeholder="Phone number" />
-												<textarea name="addAllergic" rows="4" cols="50" placeholder="Please fill this section if you have any allergies"></textarea>
-											</form>
-										<input type="submit" value="Submit">
-										<input type="reset" value="Reset">
+                                        <h2 class="card-title h3 mb-3 text-left">Thank you!</h2>
+											<table class="table">
+												<th>Description</th>
+												<tr>
+													<td>First name</td>
+													<td><?php echo $fname;?></td>
+												</tr>
+	
+												<tr>
+													<td>Last Name</td>
+													<td><?php echo $email;?></td>
+												</tr>
+	
+												<tr>
+													<td>Email</td>
+													<td><?php echo $email;?></td>
+												</tr>
+				
+												<tr>
+													<td>Allergic</td>
+													<td><?php echo $allergic;?></td>
+												</tr>
+											</table>
                                     </div>
                                 </div>
                             </div>
