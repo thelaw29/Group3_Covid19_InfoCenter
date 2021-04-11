@@ -15,6 +15,10 @@
     <meta name="keywords" content="">	
 </head>
 
+<?php
+    $fname = $lname = $email = $phone = $allergic = " ";
+?>
+
 <body> 
     <div class="container-fluid site-title">
     <!-- <div class=""> -->
@@ -40,12 +44,12 @@
 
                     <li class="nav-item" id="menu1">
                         <a class="nav-link" href="page1.html">
-                            Pfizer-BioNTech						</a>
+                            Pfizer-BioNTech				</a>
                     </li>
 
                     <li class="nav-item" id="menu2">
                         <a class="nav-link" href="page2.html">
-                            Sputnik V						</a>
+                            Sputnik V					</a>
                     </li>
 
                     <li class="nav-item" id="menu3">
@@ -54,8 +58,8 @@
                     </li>
 
                     <li class="nav-item" id="menu4">
-                        <a class="nav-link active" href="page4.html">
-                            Registration Form						</a>
+                        <a class="nav-link active" href="page4.php">
+                            Registration Form			</a>
                     </li>
 
                 </ul>
@@ -102,14 +106,15 @@
                                     <div class="card-body bg-quaternary">
                                         <h2 class="card-title h3 mb-3 text-left">Fill in the form</h2>
 											<form id="confirmform" method="post" action="confirm.php">
-												<input type="text" name="firstname" placeholder="First name" />
-												<input type="text" name="lastname" placeholder="Last name"/>
-												<input type="text" name="contactemail" placeholder="E-mail" />		
-												<input type="text" name="phone" placeholder="Phone number" />
-												<textarea name="addAllergic" rows="4" cols="50" placeholder="Please fill this section if you have any allergies"></textarea>
-											</form>
-										<input type="submit" value="Submit">
-										<input type="reset" value="Reset">
+												<label>First Name: </label><input type="text" name="firstname" value="<?php echo $fname;?>"/>
+												<label>Last Name: </label><input type="text" name="lastname" value="<?php echo $lname;?>"/>
+												<label>Email: </label><input type="text" name="contactemail" value="<?php echo $email;?>"/>
+												<label>Phone: </label><input type="text" name="phone" value="<?php echo $phone;?>"/>
+												<label>Allergies: </label><br><textarea name="addAllergic"  value="<?php echo $allergic;?>" rows="4" cols="50" placeholder="Please fill this section if you have any allergies"></textarea>	
+										        <br>
+                                                <input type="submit" value="Submit">
+										        <input type="reset" value="Reset">
+                                            </form>
                                     </div>
                                 </div>
                             </div>
@@ -125,6 +130,7 @@
         </main>
     						
     </div> 
+    
             
     <div class="container-fluid">
         <div class="container">

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="home_files/app.css">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
        
-	<title>Home | COVID-19 Info Center</title>
+	<title>Registration Confirmed | COVID-19 Info Center</title>
     <meta name="description" content="">
     <meta name="keywords" content="">	
 </head>
@@ -21,8 +21,35 @@
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
 	$email = $_POST['contactemail'];
+    $phone = $_POST['phone'];
 	$allergic = $_POST ['addAllergic'];
-?>
+    
+    if(isset($fname)){
+        $file = fopen('registration.txt', 'a');
+        fwrite($file, $fname . "\n");
+        fclose($file);
+    }
+    if(isset($lname)){
+        $file = fopen('registration.txt', 'a');
+        fwrite($file, $lname . "\n");
+        fclose($file);
+    }
+    if(isset($email)){
+        $file = fopen('registration.txt', 'a');
+        fwrite($file, $email . "\n");
+        fclose($file);
+    }
+    if(isset($phone)){
+        $file = fopen('registration.txt', 'a');
+        fwrite($file, $phone . "\n");
+        fclose($file);
+    }
+    if(isset($allergic)){
+        $file = fopen('registration.txt', 'a');
+        fwrite($file, $allergic . "\n\n");
+        fclose($file);
+    }
+?>  
     <div class="container-fluid site-title">
     <!-- <div class=""> -->
         <div class="container">
@@ -40,19 +67,19 @@
             
                 <ul class="nav navbar-nav nav-justified w-100">
                   
-                    <li class="nav-item" id="menu_home">
+                <li class="nav-item" id="menu_home">
                         <a class="nav-link" href="home.html">
                             Home						</a>
                     </li>
 
                     <li class="nav-item" id="menu1">
                         <a class="nav-link" href="page1.html">
-                            Pfizer-BioNTech						</a>
+                            Pfizer-BioNTech				</a>
                     </li>
 
                     <li class="nav-item" id="menu2">
                         <a class="nav-link" href="page2.html">
-                            Sputnik V						</a>
+                            Sputnik V					</a>
                     </li>
 
                     <li class="nav-item" id="menu3">
@@ -61,8 +88,8 @@
                     </li>
 
                     <li class="nav-item" id="menu4">
-                        <a class="nav-link active" href="page4.html">
-                            Registration Form						</a>
+                        <a class="nav-link active" href="page4.php">
+                            Registration Form			</a>
                     </li>
 
                 </ul>
@@ -110,6 +137,7 @@
                                         <h2 class="card-title h3 mb-3 text-left">Thank you!</h2>
 											<table class="table">
 												<th>Description</th>
+                                                <th>Details</th>
 												<tr>
 													<td>First name</td>
 													<td><?php echo $fname;?></td>
@@ -117,12 +145,17 @@
 	
 												<tr>
 													<td>Last Name</td>
-													<td><?php echo $email;?></td>
+													<td><?php echo $lname;?></td>
 												</tr>
 	
 												<tr>
 													<td>Email</td>
 													<td><?php echo $email;?></td>
+												</tr>
+
+                                                <tr>
+													<td>Phone Number</td>
+													<td><?php echo $phone;?></td>
 												</tr>
 				
 												<tr>
