@@ -8,12 +8,12 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="home_files/bootstrap.css">
     <link rel="stylesheet" href="home_files/app.css">
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<script src="BackToTop.js"></script>
-	 
+    <link rel="stylesheet" href="style/slideshowstyle.css">
+       
 	<title>Home | COVID-19 Info Center</title>
     <meta name="description" content="">
     <meta name="keywords" content="">	
+    <script src="home_files/slideshow.js"></script>
 </head>
 
 <body>
@@ -143,12 +143,38 @@
                                         <iframe src="https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=true&pickerSort=desc&pickerMetric=population&Metric=People+vaccinated&Interval=Cumulative&Relative+to+Population=true&Align+outbreaks=false&country=~MYS&hideControls=true" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
                                         <p>Researchers from around the world have made steady progress in the advancement of a suitable vaccine that can be used for COVID-19.</p>
                                         <p>The following are some of the current vaccines that have been developed in the past few months:</p>
-                                        
-                                        <ul>
-                                            <li><a class="nav-link" href="page1.html" style="color:lightskyblue">Pfizer-BioNTech</a> United States of America</li>
-                                            <li><a class="nav-link" href="page2.html" style="color:lightskyblue">Sputnik V</a> Russia</li>
-                                            <li><a class="nav-link" href="page3.html" style="color:lightskyblue">Sinovac</a> People's Republic of China</li>
-                                        </ul>
+
+                                        <div class="slideshow-container">
+
+                                            <div class="mySlides">
+                                              <div class="numbertext">1 / 3</div>
+                                              <a href="page1.html"><img src="home_files/pfizer3.jpg" style="width:100%"></a>
+                                              <div class="text">Pfizer-BioNTech</div>
+                                            </div>
+                                            
+                                            <div class="mySlides">
+                                              <div class="numbertext">2 / 3</div>
+                                              <a href="page2.html"><img src="home_files/Sinovac_1.jpg" style="width:100%"></a>
+                                              <div class="text">Sinovac</div>
+                                            </div>
+                                            
+                                            <div class="mySlides">
+                                              <div class="numbertext">3 / 3</div>
+                                              <a href="page3.html"><img src="home_files/sputnikV1.jpg" style="width:100%"></a>
+                                              <div class="text">Sputnik V</div>
+                                            </div>
+                                            
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                            
+                                            </div>
+                                            <br>
+                                            
+                                            <div style="text-align:center">
+                                              <span class="dot" onclick="currentSlide(1)"></span> 
+                                              <span class="dot" onclick="currentSlide(2)"></span> 
+                                              <span class="dot" onclick="currentSlide(3)"></span> 
+                                            </div>
                                     </div>
                                 </div>
                             </div>
@@ -173,8 +199,6 @@
                     </div>
                 </div>
             </div>
-			
-			<button onclick="topFunction()" id="backtotop" title="Back to top">Back to top</button>
 							
           <br>
           <br>
