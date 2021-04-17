@@ -107,7 +107,7 @@
                                     <div class="card-body bg-quaternary">
                                         <h2 class="card-title h3 mb-3 text-left">Fill in the form</h2>
 											<form id="confirmform" method="post" action="confirm.php">
-												<label>First Name: </label><input type="text" name="firstname" required="required" value="<?php echo $fname;?>"/>
+												<label>First Name: </label><input type="text" name="firstname" required="required"  pattern="^[a-zA-Z]+${25}" value="<?php echo $fname;?>"/>
 												<label>Last Name: </label><input type="text" name="lastname" required="required" pattern="^[a-zA-Z]+${25}" value="<?php echo $lname;?>"/>
 												<label>Email: </label><input type="text" name="contactemail" required="required" pattern="[A-Za-z._%+-]+@[a-z0-9.-]+\.[a-z]{3}" value="<?php echo $email;?>"/>
 												<label>Phone: </label><input type="text" name="phone" required="required" pattern="[0-9]{10}" value="<?php echo $phone;?>"/>
