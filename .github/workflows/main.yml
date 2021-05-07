@@ -1,12 +1,38 @@
-steps:
-- name: Checkout
-  uses: actions/checkout@v2
-
-- name: Setup PHP
-  uses: shivammathur/setup-php@v2
-  with:
-    php-version: '7.4'
-    extensions: mbstring, intl
-    ini-values: post_max_size=256M, max_execution_time=180
-    coverage: xdebug    
-    tools: php-cs-fixer, phpunit
+{
+    "name": "phpmentors/workflower",
+    "type": "library",
+    "description": "A BPMN 2.0 workflow engine for PHP",
+    "keywords": ["flow", "workflow", "process", "bpm", "bpmn"],
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "KUBO Atsuhiro",
+            "email": "kubo@iteman.jp"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "phpmentors/domain-kata": "~1.4",
+        "piece/stagehand-fsm": "~2.6",
+        "symfony/expression-language": "~2.8|~3.0|~4.0"
+    },
+    "require-dev": {
+        "phake/phake": "~2.0",
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPMentors\\Workflower\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHPMentors\\Workflower\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
+}
