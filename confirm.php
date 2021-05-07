@@ -19,37 +19,28 @@
 <body>
  
  <?php
+ 
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
+	$nric  = $_POST['nric'];
 	$email = $_POST['contactemail'];
     $phone = $_POST['phone'];
 	$allergic = $_POST ['addAllergic'];
-    
-    if(isset($fname)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $fname . "\n");
-        fclose($file);
-    }
-    if(isset($lname)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $lname . "\n");
-        fclose($file);
-    }
-    if(isset($email)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $email . "\n");
-        fclose($file);
-    }
-    if(isset($phone)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $phone . "\n");
-        fclose($file);
-    }
-    if(isset($allergic)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $allergic . "\n\n");
-        fclose($file);
-    }
+	
+	if (file_exists($nric . '.txt')){     //Check for filename with given nric
+            echo '<h3>You are already registered!</h3>';
+        }
+		else{   //filename not found, write to file
+            
+           $content_to_write = "First Name: " . $fname . "\n";
+           $content_to_write .= "Last Name: " . $lname . "\n";
+           $content_to_write .= "NRIC: " . $nric . "\n";
+           $content_to_write .= "Contact: " . $email . "\n";
+           $content_to_write .= "Phone: " . $phone . "\n";
+           $content_to_write .= "Allergies: " . $allergic . "\n";
+           file_put_contents($nric . '.txt', $content_to_write);
+           echo '<h3>Registration is successful!</h3>';
+        }
 ?>  
     <div class="container-fluid site-title">
     <!-- <div class=""> -->
@@ -148,7 +139,12 @@
 													<td>Last Name</td>
 													<td><?php echo $lname;?></td>
 												</tr>
-	
+												
+												<tr>
+													<td>NRIC</td>
+													<td><?php echo $nric;?></td>
+												</tr>
+												
 												<tr>
 													<td>Email</td>
 													<td><?php echo $email;?></td>
