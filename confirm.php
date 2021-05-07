@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="home_files/bootstrap.css">
     <link rel="stylesheet" href="home_files/app.css">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/footerstyle.css">
        
 	<title>Registration Confirmed | COVID-19 Info Center</title>
     <meta name="description" content="">
@@ -18,37 +19,28 @@
 <body>
  
  <?php
+ 
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
+	$nric  = $_POST['nric'];
 	$email = $_POST['contactemail'];
     $phone = $_POST['phone'];
 	$allergic = $_POST ['addAllergic'];
-    
-    if(isset($fname)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $fname . "\n");
-        fclose($file);
-    }
-    if(isset($lname)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $lname . "\n");
-        fclose($file);
-    }
-    if(isset($email)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $email . "\n");
-        fclose($file);
-    }
-    if(isset($phone)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $phone . "\n");
-        fclose($file);
-    }
-    if(isset($allergic)){
-        $file = fopen('registration.txt', 'a');
-        fwrite($file, $allergic . "\n\n");
-        fclose($file);
-    }
+	
+	if (file_exists($nric . '.txt')){     //Check for filename with given nric
+            echo '<h3>You are already registered!</h3>';
+        }
+		else{   //filename not found, write to file
+            
+           $content_to_write = "First Name: " . $fname . "\n";
+           $content_to_write .= "Last Name: " . $lname . "\n";
+           $content_to_write .= "NRIC: " . $nric . "\n";
+           $content_to_write .= "Contact: " . $email . "\n";
+           $content_to_write .= "Phone: " . $phone . "\n";
+           $content_to_write .= "Allergies: " . $allergic . "\n";
+           file_put_contents($nric . '.txt', $content_to_write);
+           echo '<h3>Registration is successful!</h3>';
+        }
 ?>  
     <div class="container-fluid site-title">
     <!-- <div class=""> -->
@@ -147,7 +139,12 @@
 													<td>Last Name</td>
 													<td><?php echo $lname;?></td>
 												</tr>
-	
+												
+												<tr>
+													<td>NRIC</td>
+													<td><?php echo $nric;?></td>
+												</tr>
+												
 												<tr>
 													<td>Email</td>
 													<td><?php echo $email;?></td>
@@ -179,22 +176,43 @@
     						
     </div> 
             
-    <div class="container-fluid">
-        <div class="container">
-        
-            <div class="card-body bg-quaternary">
-                    
-                <h5>Disclaimer</h5>
-                <p style="font-size:14px;">This website is created mainly for educational and non-commercial use only. It is a 
+    <footer>
+        <div class="footer_container">
+            <div class="footernav">
+                <div class="footernav_head">
+                    <h1>Index</h1>
+                </div>
+                <div class="footernav_list">
+                    <ul class="footerlist">
+                    <li class="list_content"><a href="home.html">Home</a></li>
+                    <li class="list_content"><a href="page4.php">Vaccine Registration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footernav">
+                <div class="footernav_head">
+                    <h1>Vaccines</h1>
+                </div>
+                <div class="footernav_list">
+                    <ul class="footerlist">
+                    <li class="list_content"><a href="page1.html">Pfizer-BioNTech</a></li>
+                    <li class="list_content"><a href="page2.html">Sputnik V</a></li>
+                    <li class="list_content"><a href="page3.html">Sinovac</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <h2>Disclaimer</h2>
+            <p>This website is created mainly for educational and non-commercial use only. It is a 
                 partial fulfillment for completion of unit SWE20001 - Development Project 1 offered in 
                 Swinburne University of Technology, Sarawak Campus. The web-master and author(s) do not 
                 represent the business entity. The content of the pages of this website might be out-dated 
                 or inaccurate, thus, the author(s) and web-master does not take any responsibility for 
-                incorrect information disseminated or cited from this website.</p>
-                
-            </div>
+                incorrect information disseminated or cited from this website.
+            </p>
         </div>
-    </div>
+    </footer>
     
 </body>
 </html>

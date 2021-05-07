@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="home_files/bootstrap.css">
     <link rel="stylesheet" href="home_files/app.css">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/footerstyle.css">
        
 	<title>Registration | COVID-19 Info Center</title>
     <meta name="description" content="">
@@ -16,7 +17,7 @@
 </head>
 
 <?php
-    $fname = $lname = $email = $phone = $allergic = " ";
+    $fname = $lname = $nric = $email = $phone = $allergic = "";
 ?>
 
 <body> 
@@ -106,15 +107,16 @@
                                     <div class="card-body bg-quaternary">
                                         <h2 class="card-title h3 mb-3 text-left">Fill in the form</h2>
 											<form id="confirmform" method="post" action="confirm.php">
-												<label>First Name: </label><input type="text" name="firstname" value="<?php echo $fname;?>"/>
-												<label>Last Name: </label><input type="text" name="lastname" value="<?php echo $lname;?>"/>
-												<label>Email: </label><input type="text" name="contactemail" value="<?php echo $email;?>"/>
-												<label>Phone: </label><input type="text" name="phone" value="<?php echo $phone;?>"/>
-												<label>Allergies: </label><br><textarea name="addAllergic"  value="<?php echo $allergic;?>" rows="4" cols="50" placeholder="Please fill this section if you have any allergies"></textarea>	
+												<label>First Name:</label><input type="text" name="firstname" required="required"  pattern="^[a-zA-Z]+${25}" value="<?php echo $fname;?>"/>
+												<label>Last Name:</label><input type="text" name="lastname" required="required" pattern="^[a-zA-Z]+${25}" value="<?php echo $lname;?>"/>
+												<label>NRIC:</label><input type="text" name="nric" required="required" pattern="[0-9]{12}" value="<?php echo $nric;?>"/>
+												<label>Email:</label><input type="text" name="contactemail" required="required" pattern="[A-Za-z._%+-]+@[a-z0-9.-]+\.[a-z]{3}" value="<?php echo $email;?>"/>
+												<label>Phone:</label><input type="text" name="phone" required="required" pattern="[0-9]{10}" value="<?php echo $phone;?>"/>
+												<label>Allergies:</label><br><textarea name="addAllergic"  value="<?php echo $allergic;?>" rows="4" cols="50" placeholder="Please fill this section if you have any allergies"></textarea>	
 										        <br>
                                                 <input type="submit" value="Submit">
 										        <input type="reset" value="Reset">
-                                            </form>
+                                            </form>	
                                     </div>
                                 </div>
                             </div>
@@ -132,22 +134,43 @@
     </div> 
     
             
-    <div class="container-fluid">
-        <div class="container">
-        
-            <div class="card-body bg-quaternary">
-                    
-                <h5>Disclaimer</h5>
-                <p style="font-size:14px;">This website is created mainly for educational and non-commercial use only. It is a 
+    <footer>
+        <div class="footer_container">
+            <div class="footernav">
+                <div class="footernav_head">
+                    <h1>Index</h1>
+                </div>
+                <div class="footernav_list">
+                    <ul class="footerlist">
+                    <li class="list_content"><a href="home.html">Home</a></li>
+                    <li class="list_content"><a href="page4.php">Vaccine Registration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footernav">
+                <div class="footernav_head">
+                    <h1>Vaccines</h1>
+                </div>
+                <div class="footernav_list">
+                    <ul class="footerlist">
+                    <li class="list_content"><a href="page1.html">Pfizer-BioNTech</a></li>
+                    <li class="list_content"><a href="page2.html">Sputnik V</a></li>
+                    <li class="list_content"><a href="page3.html">Sinovac</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <h2>Disclaimer</h2>
+            <p>This website is created mainly for educational and non-commercial use only. It is a 
                 partial fulfillment for completion of unit SWE20001 - Development Project 1 offered in 
                 Swinburne University of Technology, Sarawak Campus. The web-master and author(s) do not 
                 represent the business entity. The content of the pages of this website might be out-dated 
                 or inaccurate, thus, the author(s) and web-master does not take any responsibility for 
-                incorrect information disseminated or cited from this website.</p>
-                
-            </div>
+                incorrect information disseminated or cited from this website.
+            </p>
         </div>
-    </div>
+    </footer>
     
 </body>
 </html>

@@ -9,16 +9,18 @@
     <link rel="stylesheet" href="home_files/bootstrap.css">
     <link rel="stylesheet" href="home_files/app.css">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<script src="BackToTop.js"></script>
     <link rel="stylesheet" type="text/css" href="style/footerstyle.css">
-    
-	<title>Sputnik V | COVID-19 Info Center</title>
+       
+	<title>Registration | COVID-19 Info Center</title>
     <meta name="description" content="">
     <meta name="keywords" content="">	
 </head>
 
-<body>
- 
+<?php
+    $fname = $lname = $email = $phone = $allergic = " ";
+?>
+
+<body> 
     <div class="container-fluid site-title">
     <!-- <div class=""> -->
         <div class="container">
@@ -47,7 +49,7 @@
                     </li>
 
                     <li class="nav-item" id="menu2">
-                        <a class="nav-link active" href="page2.html">
+                        <a class="nav-link" href="page2.html">
                             Sputnik V					</a>
                     </li>
 
@@ -58,7 +60,7 @@
 
                     <li class="nav-item" id="menu4">
                         <a class="nav-link" href="page4.php">
-                            Vaccine Registration		</a>
+                            Vaccine Registration			</a>
                     </li>
 
                 </ul>
@@ -78,7 +80,7 @@
                 
                     <div class="row">
                         <br>
-                        <h2 id="content" class="open d-lg-block">Information about Sputnik V COVID-19 vaccine</h2>
+                        <h2 id="content" class="open d-lg-block">Check Registration Status</h2>
                         <br>
                         <br>
                         <br>
@@ -91,41 +93,6 @@
                     <div class="syndicate">
                         <div class="row ">
                             <div class="col-md-12">
-                                <div class="card border-0 rounded-0 mb-3">
-                                    <div class="card-body bg-primary">
-                                        <div class="row">
-                                            <div class="d-none">
-                                                <div class="text-center">
-                                                    <img src="home_files/clipboard.png" alt="Clipboard with checkmarks" class="card-img-top img-fluid p-0 bg-primary card-img-orig d-none d-md-block rounded-0">
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <h3 class="card-title h3 mb-3 text-left">General Information</h3>
-                                                <img src="home_files/sputnikV1.jpg" alt="Sputnik V Picture 1" class="card-img-top img-fluid p-0 bg-primary card-img-orig d-none d-md-block rounded-0">
-                                                <p><strong>Name:</strong> Gam-COVID-Vac</p>
-                                                <p><strong>Manufacturer:</strong> Gamaleya Research Institute of Epidemiology and Microbiology</p>
-												<p><strong>Type of Vaccine:</strong> Adenovirus viral vector</p>
-												<p><strong>Number of shots:</strong> 2 shots, 21 days apart</p>
-												<p><strong>How given:</strong> Shot in the muscle of the upper arm</p>
-												<p><strong>Does not contain:</strong></p>
-													<ul>
-														<li>Non-Halal ingredients</li>
-                                                        <li>Components of any ingredients</li>
-													</ul>
-                                               
-                                            </div>
-                                            <div class="pl-md-0 col-md-3 d-none d-md-block">
-                                                <div class="text-center">
-                                                    <img src="home_files/clipboard.png" alt="Clipboard with checkmarks" class="card-img-top img-fluid p-0 bg-primary card-img-orig d-none d-md-block rounded-0">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-md-12">
                                 <div class="row-fluid">
                                     <div class="vc_empty_space col-12 pt-3 pb-3">
                                         <span class="vc_empty_space_inner"></span>
@@ -133,46 +100,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row ">
-                            <div class="col-md-12">
-                                <div class="color-bar cyan half">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div class="card border-0 rounded-0 mb-3">
-                                    <img src="home_files/sputnikV2.jpg" alt="Sputnik V Picture 2" class="card-img-top img-fluid p-0 bg-primary card-img-orig d-none d-md-block rounded-0">
-                                    <div class="card-body ">
-                                        <h2 class="card-title h3 mb-3 text-left">Who should get vaccinated</h2>
-                                        <p>Not confirmed yet</p>
-                                    
-                                    </div>
-                                </div>
-								<div class="card border-0 rounded-0 mb-3">
-                                    <div class="card-body ">
-                                        <h2 class="card-title h3 mb-3 text-left">Who should not get vaccinated</h2>
-											<ul>
-												<li>Anyone who is commonly get headaches</li>
-											</ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="row ">
                             <div class="col-md-12">
                                 <div class="card border-0 rounded-0">
                                     <div class="card-body bg-quaternary">
-                                        <h2 class="card-title h3 mb-3 text-left">Side Effects</h2>
-                                        <img src="home_files/sputnikV3.jpg" alt="Sputnik V Picture 3" class="card-img-top img-fluid p-0 bg-primary card-img-orig d-none d-md-block rounded-0">
-										<p><strong>In the arm where you got the shot:<strong></p>
-											<ul>
-												<li>Redness</li>
-											</ul>
-										<p><strong>Throughtout the rest of your body:</strong></p>
-											<ul>
-												<li>Slight headache</li>
-											</ul>
-										<p>15% of the vaccinated of the vaccinated report the area of vaccine shot appears red and a slight headache that goes away within 24 hours.</p>
+                                        <form action="reg_check.php" method="post">
+                                            <h3>
+                                                NRIC:
+                                                <input type="text" name="nric"></input>
+                                            </h3>
+                                            <button type="submit">Check</button>
+                                        </form> 
                                     </div>
                                 </div>
                             </div>
@@ -180,9 +119,7 @@
                     </div>
                 </div>
             </div>
-				
-			<button onclick="topFunction()" id="backtotop" title="Back to top">Back to top</button>
-			
+							
           <br>
           <br>
           <br>
@@ -190,6 +127,7 @@
         </main>
     						
     </div> 
+    
             
     <footer>
         <div class="footer_container">
